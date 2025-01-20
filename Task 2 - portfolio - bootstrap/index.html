@@ -4,96 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-
-    <!-- Bootstrap  (CDN) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
-    <!-- Link to custom CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
-
-    <!-- Header Section -->
-    <header class="text-white py-4 text-center ">
-        <div class="container text-center">
-            <h1>Suvarna S</h1>
-            <p>B.Tech Graduate | Aspiring Developer</p>
-        </div>
-    </header>
-
-    <!-- Navigation Menu -->
-    <nav class=" py-3">
-        <ul class="list-inline text-center p-0">
-            <li class="list-inline-item"><a href="#about">About</a></li>
-            <li class="list-inline-item"><a href="#skills">Skills</a></li>
-            <li class="list-inline-item"><a href="#projects">Projects</a></li>
-            <li class="list-inline-item"><a href="#education">Education</a></li>
-            <li class="list-inline-item"><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- About Section -->
-    <section id="about" class="container my-5">
-        <h2>About Me</h2><hr>
-        <p>B.Tech graduate offering the ability to quickly learn and master new technologies with intuitive problem-solving skills. Passionate about implementing and launching new projects. Looking to start a career with a reputed firm driven by technology, providing opportunities to improve skills and knowledge.</p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="container my-5">
-        <h2>Skills</h2><hr>
-        <ul>
-            <li>HTML/CSS, JavaScript</li>
-            <li>React.js</li>
-            <li>Bootstrap</li>
-            <li>Python</li>
-            <li>PostgreSQL</li>
-            <li>C/C++</li>
-            <li>Git</li>
-            <li>Time Management</li>
-            <li>Effective Communication</li>
-            <li>Leadership</li>
-        </ul>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="container my-5">
-        <h2>Projects and Seminars</h2><hr>
-        <ul>
-            <li>"Computational Fluid Dynamic Analysis of Nanofluid-Based Minichannel Heat Sink for Electronic Chips Cooling" - 2024</li>
-            <li>Seminar on "Underwater Welding" - 2024</li>
-        </ul>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="container my-5">
-        <h2>Education</h2><hr>
-        <ul>
-            <li>Government Engineering College Palakkad - B.Tech in Mechanical Engineering (2020-2024)</li>
-            <li>Jawahar Navodaya Vidyalaya Palakkad - Higher Secondary (2019-2020)</li>
-            <li>Jawahar Navodaya Vidyalaya Palakkad - High School (2018)</li>
-        </ul>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container my-5">
-        <h2>Contact</h2><hr>
-        <p>Email: <a href="mailto:suvarnaa2352@gmail.com">suvarnaa2352@gmail.com</a></p>
-        <p>Phone: +91-9495396735</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/suvarnas2352" target="_blank">linkedin.com/in/suvarnas2352</a></p>
-        <p>GitHub: <a href="https://github.com/suvarna1228" target="_blank">github.com/suvarna1228</a></p>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class=" text-white py-3 text-center">
-        <p>&copy; 2025 Suvarna S. All rights reserved.</p>
-    </footer>
-
    
+    <div class="container ">
+        <div class="top-section mt-3 ">
+            <header class="text-center m-3">
+                <h1>Personal Portfolio</h1>
+            </header>
+    
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+
+
+        <!-- Main Section -->
+        <div class="row mt-5">
+            <!-- Left Column -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h3>📜 Education</h3>
+                    <p>Government Engineering College Palakkad - B.Tech in Mechanical Engineering (2020-2024)</p>
+                    <p>Jawahar Navodaya Vidyalaya Palakkad - Higher Secondary (2019-2020)</p>
+                    <p>Jawahar Navodaya Vidyalaya Palakkad - High School (2018)</p>
+                </div>
+            </div>
+
+            <!-- Center Column -->
+            <div class="col-md-4 text-center ">
+                <div class="card">
+                <img src="assets/images/avatar.jpeg" alt="Profile Image" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                <h3>About Me</h3>
+                <p>B.Tech graduate offering the ability to quickly learn and master new technologies with intuitive problem-solving skills. Passionate about implementing and launching new projects. Looking to start a career with a reputed firm driven by technology, providing opportunities to improve skills and knowledge.</p>
+               </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Email: <a href="mailto:suvarnaa2352@gmail.com">suvarnaa2352@gmail.com</a></li>
+                        <li>Phone: +91-9495396735</li>
+                        <li>LinkedIn: <a href="https://linkedin.com/in/suvarnas2352" target="_blank">linkedin.com/in/suvarnas2352</a></li>
+                        <li>GitHub: <a href="https://github.com/suvarna1228" target="_blank">github.com/suvarna1228</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Bootstrap</li>
+                        <li>HTML/CSS, JavaScript</li>
+                        <li>C/C++</li>
+                        <li>Ansys Fluent</li>
+                        <li>CAD Designing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <h3>Projects and Seminars</h3>
+                    <p>"Computational Fluid Dynamic Analysis of Nanofluid-Based Minichannel Heat Sink for Electronic Chips Cooling" - 2024</p>
+                    <p>Seminar on "Underwater Welding" - 2024</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <h3>Certification</h3>
+                    <p>Artificial Intelligence with Python</p>
+                    <p>PostgreSQL: Become an SQL developer</p>
+                    <p>Mastering JavaScript Fundamentals</p>
+                    <p>Master Python by building 100 projects in 100 days</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    
-    <script src="assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
-
