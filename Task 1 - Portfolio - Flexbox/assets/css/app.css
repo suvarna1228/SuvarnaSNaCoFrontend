@@ -91,11 +91,44 @@ body {
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
+.center{
+    display: flex;
+    font-size: x-small;
+   gap: 10px;
+}
+.bio{
+    
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 .center-card .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 76px;
+    height: 76px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
 
+/* Mobile Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .nav-list li {
+        margin: 1px 0;
+        font-size: x-small;
+    }
+    .top-section{
+        margin: 10px;
+        height: 10px;
+    }
+    .header{
+        text-align: start;
+        font-size: small;
+        padding-left: 10px;
+    }
+}

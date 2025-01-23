@@ -17,13 +17,14 @@ body {
     padding-left: 5rem;
     width: 100%;
 }
+.nav-link{
+    color: white;
+}
 .card {
     border: 2px solid #ccc;
     padding: 15px;
 }
-.nav-item {
-    margin-right: 15px;
-}
+
 
 a {
    color: rgb(16, 5, 5);
