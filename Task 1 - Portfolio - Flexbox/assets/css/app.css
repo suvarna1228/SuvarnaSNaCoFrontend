@@ -131,4 +131,8 @@ body {
         font-size: small;
         padding-left: 10px;
     }
+    .center{
+        display: flex;
+        flex-direction: column;
+    }
 }

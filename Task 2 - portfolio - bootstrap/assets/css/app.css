@@ -7,7 +7,7 @@ body {
     
 }
 
-.top-section{
+.navbar{
     display: flex;
     align-items: center;
     justify-content: space-between;
