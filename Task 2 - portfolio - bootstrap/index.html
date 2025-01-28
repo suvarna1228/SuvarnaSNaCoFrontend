@@ -21,14 +21,22 @@
         <!-- Navigation -->
         <nav>
             <div class="container-fluid">
-                <ul class="navbar-nav mx-auto ">
-                    <li class="nav-item ">
-                        <a class="nav-link lg:fw-bold fs-6 fs-lg-4" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link lg:fw-bold fs-6 fs-lg-4" href="#contact">Contact</a>
-                    </li>
-                </ul>
+                <!-- Toggle button for small screens -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation items -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link lg:fw-bold fs-6 fs-lg-4" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link lg:fw-bold fs-6 fs-lg-4" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         </div>

@@ -1,4 +1,4 @@
-
+/* General Body Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -6,7 +6,7 @@ body {
     padding: 0;
     
 }
-
+/* Navbar Styles */
 .navbar{
     display: flex;
     align-items: center;
@@ -19,11 +19,13 @@ body {
 .nav-link{
     color: white;
 }
+
+/* Card Styles */
 .card {
     border: 2px solid #ccc;
     padding: 15px;
 }
-
+/* Link Styles */
 
 a {
    color: rgb(16, 5, 5);
