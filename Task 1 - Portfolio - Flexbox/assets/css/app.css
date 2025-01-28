@@ -120,42 +120,38 @@ body {
 
 /* Mobile Responsive Navbar */
 @media (max-width: 768px) {
+   
     .toggle-btn {
-        display: block;
+        display: block; /* Display toggle button on mobile */
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
         cursor: pointer;
     }
+    .nav{
+        padding: 0;
+    }
+
     .nav-list {
-        display: none; /* Initially hidden */
+        display: none; /* Hide nav-list initially */
         flex-direction: column;
-        width: 100%;
-        background: linear-gradient(to right, #6a11cb, #2575fc);
-        font-size: smaller;
-        position: absolute;
-        left: 0;
-        margin-right: 10px;
-        margin-left: 10px;
-        overflow: hidden; 
-        height: 0;
-        transition: height 0.3s ease; /* Smooth transition for height */
+        width: 100%; /* Take full width */
+        margin-top: 5px;
+       
     }
-    
-    .nav-list li {
-        /* margin: 10px 0; */
-        text-align: center;
-        
-        
-    }
+
     .nav-list.show {
-        display: flex;
-        height: 40px;
-        margin: 0px 10px;
-        /* Show menu when toggled */
+        display: flex; /* Show nav-list when toggle button is clicked */
         
     }
-    .top-section{
-        margin: 10px; /*giving margin to the top section*/
-        height: 10px;
+
+    .top-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
+
     .header{
         text-align: start;
         font-size: 10px;
