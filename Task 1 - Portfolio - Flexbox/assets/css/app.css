@@ -1,4 +1,4 @@
-/* General Body Styles */
+General Body Styles
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -47,7 +47,7 @@ body {
     padding-right: 2rem;
     
 } 
-
+/* nav-list styles */
 .nav-list {
     display: flex;
     justify-content: center;
@@ -122,40 +122,71 @@ body {
 @media (max-width: 768px) {
    
     .toggle-btn {
-        display: block; /* Display toggle button on mobile */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         font-size: 1.5rem;
         background: none;
         border: none;
         color: white;
         cursor: pointer;
+        margin-right: 5px;
+        padding: 0;
+        align-self: flex-end; /* Align the toggle button to the right */
     }
     .nav{
-        padding: 0;
+        width: 100%; /* Nav takes full width */
+        padding: 0; /* Remove padding */
+        display: flex;
+        flex-direction: column; /* Align items vertically */
+        align-items: flex-start; /* Align items to the left */
     }
 
     .nav-list {
         display: none; /* Hide nav-list initially */
+        
         flex-direction: column;
-        width: 100%; /* Take full width */
-        margin-top: 5px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        
        
     }
+
 
     .nav-list.show {
         display: flex; /* Show nav-list when toggle button is clicked */
         
     }
+    .nav-list li {
+        margin: 0; /* Remove default margins */
+        
+        text-align: right; /* Align text to the right */
+       
+    }
+     
+    
+    .nav-list a {
+        color: white;
+        text-decoration: none; 
+        display: block; /* Make links fill the list item width */
+    }
 
     .top-section {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+         
+        align-items: flex-start; /* Align items to the left by default */
+       
     }
 
     .header{
-        text-align: start;
         font-size: 10px;
-        padding-left: 10px;
+        
+        padding-left: 5px; /* Remove padding */
+        text-align: center; /* Center the title */
+        margin-bottom: 5px; /* Space between title and nav */
     }
     .center{
         display: flex;
