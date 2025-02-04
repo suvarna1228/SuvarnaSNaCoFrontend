@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="top-section">
+           <input type="text" id="taskInput"  placeholder="Item Name">
+           <button id="addItem"> ADD ITEM</button>
+        </div>
+        <div class="list-section">
+            <div class="todo-section">
+                <h2> To-Do List</h2>
+                <ul id="todoList"></ul>
+            </div>
+            <div class="controls">
+                <button id="moveRight">Move →</button>
+                <button id="moveLeft">← Move</button>
+            </div>
+            <div class="completed-section">
+                <h2>Complete List</h2>
+                <ul id="completedList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
