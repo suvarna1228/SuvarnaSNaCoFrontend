@@ -3,10 +3,16 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: whitesmoke;
-    margin: 20px;
+    /* margin: 20px; */
+    background: linear-gradient(135deg, #a98bea, #e67b7f);
+}
+h1{
+    margin: 10px;
+    padding: 20px;
+    font-size: 3rem;
 }
 h2{
-    color: rgb(25, 25, 211);
+    color: rgb(16, 16, 16);
 }
 /* Main container */
 .container {
@@ -43,6 +49,9 @@ h2{
     width: 300px;
     height:500px; 
     border: 4px solid black;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: inset;
 }
 .controls {
     display: flex;
@@ -59,7 +68,7 @@ h2{
 
 
 button {
-    background-color:rgb(52, 52, 236);
+    background-color:rgb(12, 12, 12);
     color: white;
     border: none;
     padding: 10px 40px;
@@ -77,13 +86,13 @@ ul {
 }
 li {
     background: #ddd;
-    margin: 5px 0;
+    margin: 15px;
     padding: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 li.selected {
-    background: #ffa500;
+    background: #b8a37d;
     color: white;
 }
 
