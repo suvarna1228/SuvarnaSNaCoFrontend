@@ -3,12 +3,16 @@ document.getElementById('addItem').addEventListener('click', function () {
     let taskInput = document.getElementById('taskInput');
     let taskText = taskInput.value.trim();
 
-    if (taskText !== "") {
-        addTaskToList(taskText, 'todoList');
-        taskInput.value = "";
-        saveData();
+    if (taskText === '') {
+        alert("You Must Write Something!");
+        return; // Stop further execution
     }
+
+    addTaskToList(taskText, 'todoList');
+    taskInput.value = "";
+    saveData();
 });
+
 
 // Move Tasks Between Lists
 document.getElementById('moveRight').addEventListener('click', function () {
