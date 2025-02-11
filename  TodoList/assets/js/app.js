@@ -1,3 +1,4 @@
+
 // Add Task
 document.getElementById('addItem').addEventListener('click', function () {
     let taskInput = document.getElementById('taskInput');
@@ -75,12 +76,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Function to Add Task to a List
 function addTaskToList(text, listId) {
+    let todoList = document.getElementById('todoList');
+    let completedList = document.getElementById('completedList');
+
+    // Get all existing tasks from both lists
+    let existingTasks = [
+        ...Array.from(todoList.children).map(item => item.textContent),
+        ...Array.from(completedList.children).map(item => item.textContent)
+    ];
+
+    // Check if task already exists
+    if (existingTasks.includes(text)) {
+        alert("Task already exists in one of the lists!");
+        return;
+    }
+
     let li = document.createElement('li');
     li.textContent = text;
-
     li.onclick = function () {
         this.classList.toggle('selected');
     };
 
     document.getElementById(listId).appendChild(li);
+    saveData(); 
 }
