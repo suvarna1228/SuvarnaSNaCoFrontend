@@ -4,13 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let moveRightButton = document.getElementById("moveRight");
     let moveLeftButton = document.getElementById("moveLeft");
 
+    let lastDeletedItem = null;
+    let lastDeletedFromList = null;
+
     addItemButton.addEventListener("click", addTaskToList);
     removeTaskButton.addEventListener("click", removeSelectedTasks);
     moveRightButton.addEventListener("click", () => moveTasks("todoList", "completedList"));
     moveLeftButton.addEventListener("click", () => moveTasks("completedList", "todoList"));
 });
 
-//  Function to Add Task 
+// Function to Add Task
 function addTaskToList() {
     let taskInput = document.getElementById("taskInput");
     let taskText = taskInput.value.trim();
@@ -38,11 +41,11 @@ function addTaskToList() {
     todoList.appendChild(li);
     showToast("Item added successfully!", "green");
 
-    taskInput.value = ""; 
+    taskInput.value = "";
     saveData();
 }
 
-//  Function to Move Selected Items Between Lists
+// Function to Move Selected Items Between Lists
 function moveTasks(fromListId, toListId) {
     let fromList = document.getElementById(fromListId);
     let toList = document.getElementById(toListId);
@@ -65,49 +68,73 @@ function moveTasks(fromListId, toListId) {
     saveData();
 }
 
-//  Function to Remove Selected Tasks
+// Function to Remove Selected Tasks with Undo Feature
 function removeSelectedTasks() {
-    let lists = [document.getElementById("todoList"), document.getElementById("completedList")];
+    let todoList = document.getElementById("todoList");
+    let completedList = document.getElementById("completedList");
 
-    let hasRemoved = false;
-    lists.forEach(list => {
-        let selectedItems = Array.from(list.getElementsByClassName("selected"));
-        if (selectedItems.length > 0) {
-            hasRemoved = true;
-        }
-        selectedItems.forEach(item => item.remove());
-    });
+    let selectedItems = [...todoList.getElementsByClassName("selected"), ...completedList.getElementsByClassName("selected")];
 
-    if (hasRemoved) {
-        showToast("Item removed successfully!", "gray");
-    } else {
+    if (selectedItems.length === 0) {
         showToast("No item selected!", "orange");
+        return;
     }
 
+    lastDeletedItem = selectedItems.map(item => ({
+        text: item.textContent,
+        parent: item.parentNode.id
+    }));
+
+    selectedItems.forEach(item => item.remove());
+
+    showToast("Item removed successfully! Click to Undo", "gray", undoDelete);
     saveData();
 }
 
-//  Function to Show Toaster Notification
-function showToast(message, bgColor) {
-    Toastify({
+// Function to Undo Delete
+function undoDelete() {
+    if (!lastDeletedItem) return;
+
+    lastDeletedItem.forEach(({ text, parent }) => {
+        let list = document.getElementById(parent);
+        let li = document.createElement("li");
+        li.textContent = text;
+        li.onclick = function () {
+            this.classList.toggle("selected");
+        };
+        list.appendChild(li);
+    });
+
+    lastDeletedItem = null;
+    saveData();
+}
+
+// Function to Show Toaster Notification with Undo Button
+function showToast(message, bgColor, undoCallback = null) {
+    let toast = Toastify({
         text: message,
         duration: 3000,
         gravity: "top",
         position: "right",
         backgroundColor: bgColor,
-    }).showToast();
+        stopOnFocus: true,
+        close: true,
+        onClick: undoCallback // Calls undo function if clicked
+    });
+
+    toast.showToast();
 }
 
-//  Function to Save Data in Local Storage 
+// Function to Save Data in Local Storage
 function saveData() {
     let todoList = [...document.getElementById("todoList").children].map(item => item.textContent);
     let completedList = [...document.getElementById("completedList").children].map(item => item.textContent);
-    
+
     localStorage.setItem("todoList", JSON.stringify(todoList));
     localStorage.setItem("completedList", JSON.stringify(completedList));
 }
 
-//  Function to Load Data on Page Refresh
+// Function to Load Data on Page Refresh
 function loadData() {
     let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
     let completedList = JSON.parse(localStorage.getItem("completedList")) || [];
@@ -119,7 +146,7 @@ function loadData() {
     completedList.forEach(text => addListItem(completedListElement, text));
 }
 
-//   Function to Add Item to List 
+// Function to Add Item to List
 function addListItem(listElement, text) {
     let li = document.createElement("li");
     li.textContent = text;
