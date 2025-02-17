@@ -111,19 +111,40 @@ function undoDelete() {
 
 // Function to Show Toaster Notification with Undo Button
 function showToast(message, bgColor, undoCallback = null) {
+    let toastContent = document.createElement("div");
+    toastContent.innerHTML = `<span>${message}</span>`;
+    
+    if (undoCallback) {
+        let undoButton = document.createElement("button");
+        undoButton.textContent = "Undo";
+        undoButton.style.marginLeft = "10px";
+        undoButton.style.padding = "10px 10px";
+        undoButton.style.border = "none";
+        undoButton.style.backgroundColor = "black";
+        undoButton.style.color = "white";
+        undoButton.style.cursor = "pointer";
+        undoButton.style.fontWeight = "bold";
+        undoButton.onclick = () => {
+            undoCallback();
+            toast.hideToast();
+        };
+
+        toastContent.appendChild(undoButton);
+    }
+
     let toast = Toastify({
-        text: message,
+        node: toastContent, // Use the custom content
         duration: 3000,
         gravity: "top",
         position: "right",
         backgroundColor: bgColor,
         stopOnFocus: true,
         close: true,
-        onClick: undoCallback // Calls undo function if clicked
     });
 
     toast.showToast();
 }
+
 
 // Function to Save Data in Local Storage
 function saveData() {
