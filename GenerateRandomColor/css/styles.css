@@ -1,0 +1,16 @@
+.bg-purple {
+    background-color: #581845 
+}
+.content-container{
+    box-sizing: border-box;
+}
+.bg-blue {
+    background-color: #b3c9ef; 
+}
+.text-blue{
+   color:#3f67ad  ;
+}
+.text-decoration-dotted {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
