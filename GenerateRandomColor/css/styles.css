@@ -14,3 +14,19 @@
     text-decoration: underline;
     text-decoration-style: dotted;
 }
+.btn-custom:hover {
+    background-color: rgb(70, 11, 97) !important; /* Change color on hover */
+    transform: scale(1.05); /* Slightly increase size */
+    transition: 0.3s ease-in-out; /* Smooth transition */
+  }
+          /* Orange text by default */
+          .nav-pills .nav-link {
+            color: rgb(230, 92, 37);
+            font-weight: bold;
+        }
+        /* Gray when active */
+        .nav-pills .nav-link.active {
+            color: gray !important;
+            background-color: transparent !important;
+            border: none;
+        }

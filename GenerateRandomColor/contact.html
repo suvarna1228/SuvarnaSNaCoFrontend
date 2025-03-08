@@ -9,18 +9,60 @@
 </head>
 <body>
     <div id="navbar-container"></div>
-    <h2>Contact Us</h2>
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <button type="submit">Submit</button>
-    </form>
+
+  <!-- Contact Section -->
+  <div class="container text-center my-4">
+
+    <!-- Bootstrap Tabs -->
+    <ul class="nav nav-pills justify-content-center mb-3 gap-2" id="contactTabs">
+        <li class="nav-item">
+            <a class="nav-link border" data-bs-toggle="pill" href="#address">📧 Address</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link border" data-bs-toggle="pill" href="#phone">📞 Phone</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link border" data-bs-toggle="pill" href="#email">✉ Email</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link border" data-bs-toggle="pill" href="#website">🌐 Website</a>
+        </li>
+    </ul>
+
+    <!-- Contact Information -->
+    <div class="tab-content">
+        <div id="address" class="tab-pane fade show active">
+            <div class="p-4 border bg-blue text-blue text-center rounded">
+                <p class="mb-0">9889 University Crescent</p>
+                <p class="mb-0">Burnaby, V5A 4Z2</p>
+                <p>BC, Canada</p>
+            </div>
+        </div>
+        <div id="phone" class="tab-pane fade">
+            <div class="p-4 border bg-blue text-blue text-center rounded">
+                <p class="mb-0">+1 123-456-7890</p>
+            </div>
+        </div>
+        <div id="email" class="tab-pane fade">
+            <div class="p-4 border bg-blue text-blue text-center rounded">
+                <p class="mb-0">contact@colormodels.com</p>
+            </div>
+        </div>
+        <div id="website" class="tab-pane fade">
+            <div class="p-4 border bg-blue text-blue text-center rounded">
+                <p class="mb-0"><a href="https://www.colormodels.com" target="_blank">www.colormodels.com</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="text-center mt-4  bg-dark text-white w-50 mx-auto rounded">
+        <p class="mb-0">&copy; 2018. M. Bouguerra. All rights reserved.</p>
+    </footer>
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<footer class="text-center mt-4  bg-dark text-white w-50 mx-auto rounded">
-    <p class="mb-0">&copy; 2018. M. Bouguerra. All rights reserved.</p>
-</footer>
+
 </html>
