@@ -30,3 +30,19 @@
             background-color: transparent !important;
             border: none;
         }
+        .color-text {
+            font-weight: bold;
+        }
+        
+        #red-text {
+            color: red;
+        }
+        
+        #green-text {
+            color: green;
+        }
+        
+        #blue-text {
+            color: blue;
+        }
+        
