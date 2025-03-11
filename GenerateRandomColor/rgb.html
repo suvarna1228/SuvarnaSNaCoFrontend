@@ -15,9 +15,9 @@
             <div class="col-md-6">
                 <div class="p-3 border rounded bg-light">
                     <h4 class=" bg-danger bg-opacity-10 p-2 rounded ">
-                        <span id="red-text" class="color-text">Red</span>
-                        <span id="green-text" class="color-text">Green</span>
-                        <span id="blue-text" class="color-text">Blue</span>
+                        <span class="color-text">Red</span>
+                        <span  class="color-text">Green</span>
+                        <span  class="color-text">Blue</span>
                         ( <span class="rgb-letter">R</span>
                         <span class="rgb-letter">G</span>
                         <span class="rgb-letter">B</span>)
@@ -34,9 +34,9 @@
                            <span class="text-primary">blue</span> 
                            give 16,777,216 different colors.</p>
                     <p>Starting with <strong>(
-                        <span id="red-text" class="color-text">Red</span>,
-                        <span id="green-text" class="color-text">Green</span>, and
-                        <span id="blue-text" class="color-text">Blue</span>) = (0,0,0)</strong> (black), different color "lights" are added to produce visible colors.</p>
+                        <span class="color-text">Red</span>,
+                        <span  class="color-text">Green</span>, and
+                        <span  class="color-text">Blue</span>) = (0,0,0)</strong> (black), different color "lights" are added to produce visible colors.</p>
                 </div>
             </div>
             
@@ -44,9 +44,9 @@
             <div class="col-md-6">
                 <div class="p-3 border rounded  ">
                     <h4 class=" bg-success bg-opacity-10 p-2 rounded">
-                        <span id="red-text" class="color-text">Red</span>
-                        <span id="green-text" class="color-text">Green</span>
-                        <span id="blue-text" class="color-text">Blue</span>
+                        <span class="color-text">Red</span>
+                        <span  class="color-text">Green</span>
+                        <span  class="color-text">Blue</span>
                         (<span class="rgb-letter">R</span>
                         <span class="rgb-letter">G</span>
                         <span class="rgb-letter">B</span>)
@@ -58,34 +58,38 @@
                         values:
                     </label>
                     <div class="d-flex gap-2 my-2">
-                        <span id="red-text" class="color-text">Red:</span>
+                        <span class="color-text">Red:</span>
                         <select class="form-select" id="red"></select>
-                        <span id="green-text" class="color-text">Green:</span>
+                        <span  class="color-text">Green:</span>
                         <select class="form-select" id="green"></select>
-                        <span id="blue-text" class="color-text">Blue:</span><select class="form-select" id="blue"></select>
+                        <span  class="color-text">Blue:</span><select class="form-select" id="blue"></select>
                     </div>
-                    <div class="mt-3 d-flex  bg-blue p-3">
+                    <div id="colorTableContainer" class="mt-3 d-flex  bg-blue p-3">
                         <table class="text-center ">
-                            <tr>
-                                <th class="px-4 py-3">                         
-                        <span class="rgb-letter">R</span>
-                         <span class="rgb-letter">G</span>
-                         <span class="rgb-letter">B</span>Float Values
-                        </th>
-                                <th class="px-4 py-3">                         
-                                <span class="rgb-letter">R</span>
-                               <span class="rgb-letter">G</span>
-                              <span class="rgb-letter">B</span>Hexadecimal Values</th>
-                                <th class="px-4 py-3">
-                                Display
-                                </th>
-                             </tr>
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-3">                         
+                            <span class="rgb-letter">R</span>
+                             <span class="rgb-letter">G</span>
+                             <span class="rgb-letter">B</span>Float Values
+                            </th>
+                                    <th class="px-4 py-3">                         
+                                    <span class="rgb-letter">R</span>
+                                   <span class="rgb-letter">G</span>
+                                  <span class="rgb-letter">B</span>Hexadecimal Values</th>
+                                    <th class="px-4 py-3">
+                                    Display
+                                    </th>
+                                 </tr>
+                            </thead>
+                            <tbody id="colorTableBody"> 
                             <tr>
                                 <td id="rgbValues">(0.00, 0.00, 0.00)</td>
                                 <td id="hexValue">#000000</td>
                                 <td id="colorDisplay" style="width: 50px; height: 50px; background-color: #000000;">
                                 </td>
                             </tr>
+                        </tbody>
                         </table>
                     </div>
                 </div>
@@ -94,7 +98,7 @@
         
         <!-- Generate Colors Button -->
         <div class="text-center mt-4 ">
-            <button onclick="generateRandomColors()" class="rounded btn-custom   bg-purple text-white p-3">Generate Random Colors</button>
+            <button id="generateColorsBtn"  class="rounded btn-custom   bg-purple text-white p-3">Generate Random Colors</button>
         </div>
         <footer class="text-center mt-4  bg-dark text-white w-50 mx-auto rounded">
             <p class="mb-0">&copy; 2018. M. Bouguerra. All rights reserved.</p>

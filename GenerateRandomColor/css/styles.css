@@ -34,15 +34,15 @@
             font-weight: bold;
         }
         
-        #red-text {
+        .color-text:nth-of-type(1) {
             color: red;
         }
         
-        #green-text {
+        .color-text:nth-of-type(2) {
             color: green;
         }
         
-        #blue-text {
+        .color-text:nth-of-type(3) {
             color: blue;
         }
         .cyan {
