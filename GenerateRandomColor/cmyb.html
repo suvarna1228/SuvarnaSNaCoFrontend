@@ -16,9 +16,25 @@
             <!-- CMYK Information -->
             <div class="col-md-6">
                 <div class="p-3 border rounded bg-light">
-                    <h5 class="text-danger bg-danger bg-opacity-10 p-2 rounded">Cyan Magenta Yellow (CMY)</h5>
-                    <p><strong>CMYK</strong> is a <em>subtractive reflected light color model</em>, where each color is stored in one byte.</p>
-                    <p>All possible combinations of CMYK give 2³² different colors.</p>
+                    <h5 class="text-danger bg-danger bg-opacity-10 p-2 rounded">
+                        <span class="cmy-word cyan">Cyan</span>
+                        <span class="cmy-word magenta">Magenta</span>
+                        <span class="cmy-word yellow">Yellow</span>
+                         (<span class="cmy-letter" id="cyan-letter">C</span>
+                        <span class="cmy-letter" id="magenta-letter">M</span>
+                        <span class="cmy-letter" id="yellow-letter">Y</span>)
+                    </h5>
+                    <p><strong>
+                        <span class="cmy-letter" id="cyan-letter">C</span>
+                        <span class="cmy-letter" id="magenta-letter">M</span>
+                        <span class="cmy-letter" id="yellow-letter">Y</span>
+                        K
+                    </strong> is a <em>subtractive reflected light color model</em>, where each color is stored in one byte.</p>
+                    <p>All possible combinations of 
+                        <span class="cmy-letter" id="cyan-letter">C</span>
+                        <span class="cmy-letter" id="magenta-letter">M</span>
+                        <span class="cmy-letter" id="yellow-letter">Y</span>
+                        K give 2³² different colors.</p>
                     <p>Starting with <strong>white</strong> color, to which different color <strong>inks</strong> are added to <strong>absorb (subtract)</strong> light that is reflected.</p>
                 </div>
             </div>
@@ -26,19 +42,56 @@
             <!-- CMY Color Selection -->
             <div class="col-md-6">
                 <div class="p-3 border rounded bg-light">
-                    <h5 class="text-success bg-success bg-opacity-10 p-2 rounded">Cyan Magenta Yellow (CMY)</h5>
-                    <p>Select <strong>CMY</strong> values:</p>
+                    <h5 class="text-success bg-success bg-opacity-10 p-2 rounded">
+                        <span class="cmy-word cyan">Cyan</span>
+                        <span class="cmy-word magenta">Magenta</span>
+                        <span class="cmy-word yellow">Yellow</span>
+                         (<span class="cmy-letter" id="cyan-letter">C</span>
+                        <span class="cmy-letter" id="magenta-letter">M</span>
+                        <span class="cmy-letter" id="yellow-letter">Y</span>)
+                    </h5>
+                   
                     <div class="mb-3">
-                        <select class="form-select">
-                            <option selected>Cyan</option>
-                            <option>Magenta</option>
-                            <option>Yellow</option>
-                        </select>
+                        <label>Select     
+                            <span class="cmy-letter">C</span>
+                            <span class="cmy-letter">M</span>
+                            <span class="cmy-letter">Y</span>
+                            values:
+                        </label>
+                        <div class="d-flex gap-2 my-2">
+                            <span class="cmy-word cyan">Cyan:</span>
+                            <select class="form-select" id="cyan"></select>
+                            <span class="cmy-word magenta">Magenta:</span>
+                            <select class="form-select" id="magenta"></select>
+                            <span class="cmy-word yellow">Yellow:</span>
+                            <select class="form-select" id="yellow"></select>
+                        </div>
                     </div>
                     <div class="mt-3 d-flex gap-5 bg-blue p-3">
-                        <p >RGB Float Values</p>
-                        <p >RGB Hexadecimal Values</p>
-                        <p >Display</p>
+                        <table class=" mt-3">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-3">
+                                        <span class="rgb-letter">R</span>
+                                        <span class="rgb-letter">G</span>
+                                        <span class="rgb-letter">B</span> Float Values
+                                    </th>
+                                    <th class="px-4 py-3">
+                                        <span class="rgb-letter">R</span>
+                                        <span class="rgb-letter">G</span>
+                                        <span class="rgb-letter">B</span> Hexadecimal Values
+                                    </th>
+                                    <th class="px-4 py-3">Display</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="cmyValues">(0.00, 0.00, 0.00)</td>
+                                    <td id="hexCMYValue">#000000</td>
+                                    <td id="cmyDisplay" style="width: 50px; height: 50px; background-color: #000000;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     /*
-     * Populate Dropdowns 
+      Populate Dropdowns 
      */
-    function setValues() {
+      function setValues() {
         const populateDropdown = (id) => {
             let select = document.getElementById(id);
             if (select) {
@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         };
-
-        // Populate RGB dropdowns
-        ["red", "green", "blue"].forEach(populateDropdown);
+    
+        // Populate both RGB and CMY dropdowns
+        ["red", "green", "blue", "cyan", "magenta", "yellow"].forEach(populateDropdown);
     }
-
+    
     // Initialize dropdown values
     setValues();
 
@@ -76,4 +76,56 @@ document.addEventListener("DOMContentLoaded", function () {
     // Expose functions to global scope (if needed elsewhere)
     window.setValues = setValues;
     window.generateRandomColors = generateRandomColors;
-});
+});function displayCMYColor() {
+    // Get selected values from dropdowns
+    let C = parseInt(document.getElementById("cyan").value);
+    let M = parseInt(document.getElementById("magenta").value);
+    let Y = parseInt(document.getElementById("yellow").value);
+
+    // Convert CMY to RGB using the formula (R,G,B) = (255 − C,255 − M,255 − Y)
+    let R = 255 - C;
+    let G = 255 - M;
+    let B = 255 - Y;
+
+    // Convert RGB to float values (range 0 to 1)
+    let R_float = (R / 255).toFixed(2);
+    let G_float = (G / 255).toFixed(2);
+    let B_float = (B / 255).toFixed(2);
+
+    // Convert RGB to Hex
+    let hexColor = rgbToHex(R, G, B);
+
+    // Update Table Data
+    document.getElementById("cmyValues").textContent = `(${R_float}, ${G_float}, ${B_float})`;
+    document.getElementById("hexCMYValue").textContent = hexColor;
+    document.getElementById("cmyDisplay").style.backgroundColor = hexColor;
+}
+
+// ✅ Function to Convert RGB to Hexadecimal (Moved Outside)
+function rgbToHex(r, g, b) {
+    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
+}
+
+// ✅ Function to Animate CMY Letters
+function animateCMYLetters() {
+    const letters = document.querySelectorAll(".cmy-letter"); // Target CMY letters
+    const colors = ["cyan", "magenta", "yellow"]; // CMY colors
+
+    setInterval(() => {
+        letters.forEach(letter => {
+            let randomColor = colors[Math.floor(Math.random() * colors.length)]; // Pick a random CMY color
+            letter.style.color = randomColor;
+        });
+    }, 500); // Change colors every 500ms
+}
+
+// ✅ Attach Event Listeners to Dropdowns
+document.getElementById("cyan").addEventListener("change", displayCMYColor);
+document.getElementById("magenta").addEventListener("change", displayCMYColor);
+document.getElementById("yellow").addEventListener("change", displayCMYColor);
+
+// ✅ Initialize CMY animation
+animateCMYLetters();
+
+// ✅ Initial Call to Set Default Values
+displayCMYColor();
