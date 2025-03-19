@@ -1,3 +1,5 @@
+
+
 .bg-purple {
     background-color: #581845 
 }
@@ -57,4 +59,46 @@
             color: yellow;
         }
         
+        @media (max-width: 576px) {
+            body {
+                font-size: 14px; /* General font size */
+            }
         
+            h4 {
+                font-size: 18px;
+            }
+        
+            p, label, span {
+                font-size: 14px;
+            }
+        
+            th, td {
+                font-size: 13px !important;
+            }
+        
+            .form-select, button {
+                font-size: 14px;
+            }
+        
+            footer p {
+                font-size: 12px;
+            }
+        
+           
+            .navbar-nav .nav-link {
+                font-size: 16px ;
+                font-weight: 500;
+            }
+        }
+        .navbar-nav .nav-link {
+            
+            font-size: 20px ;
+            font-weight: 500;
+        }
+        
+        .navbar-brand {
+            font-size: 30px ;
+            padding-left: 0;
+        }
+        
+         
